@@ -20,7 +20,7 @@ public class MotorSubsystem extends SubsystemBase {
         motor.getConfigurator().apply(motorConfig);
     }
 
-    public void motorSet(double speed) {
+    public void motorSetSpeed(double speed) {
         motor.set(speed);
     }
 }

@@ -4,8 +4,10 @@
 
 package frc.robot;
 
-import frc.robot.Constants.OperatorConstants;
+// import frc.robot.Constants.OperatorConstants;
+import frc.robot.commands.MotorCommand;
 import frc.robot.subsystems.MotorSubsystem;
+// import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -17,8 +19,9 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
-  CommandXboxController controller = new CommandXboxController(0);
   MotorSubsystem motorSubsystem = new MotorSubsystem();
+  CommandXboxController controller = new CommandXboxController(0);
+  Command motorCmd = new MotorCommand(motorSubsystem, () -> controller.getLeftY());
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -36,7 +39,7 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {
-    motorSubsystem.setDefaultCommand(getAutonomousCommand());
+    motorSubsystem.setDefaultCommand(motorCmd);
   }
 
   /**
@@ -45,6 +48,6 @@ public class RobotContainer {
    * @return the command to run in autonomous
    */
   public Command getAutonomousCommand() {
-
+    return null;
   }
 }

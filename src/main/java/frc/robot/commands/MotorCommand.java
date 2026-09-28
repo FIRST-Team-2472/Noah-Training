@@ -18,17 +18,17 @@ public class MotorCommand extends Command {
 
     @Override
     public void initialize() {
-        motorSubsystem.motorSet(0);
+        motorSubsystem.motorSetSpeed(0);
     }
 
     @Override
     public void execute() {
-        motorSubsystem.motorSet(motorJoystick.get());
+        motorSubsystem.motorSetSpeed(motorJoystick.get());
     }
 
     @Override
     public void end(boolean interrupted) {
-        motorSubsystem.motorSet(0);
+        motorSubsystem.motorSetSpeed(0);
     }
 
     @Override
