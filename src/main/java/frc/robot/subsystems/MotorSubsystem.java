@@ -7,7 +7,7 @@ import com.ctre.phoenix6.hardware.TalonFX;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class MotorSubsystem extends SubsystemBase {
-    TalonFX motor = new TalonFX(0);
+    TalonFX motor = new TalonFX(10);
 
     public MotorSubsystem() {
         TalonFXConfiguration motorConfig = new TalonFXConfiguration();
