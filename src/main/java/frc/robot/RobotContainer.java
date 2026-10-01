@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.commands.ExtendedMotorCommand;
 import frc.robot.commands.MotorCommand;
 import frc.robot.subsystems.MotorSubsystem;
+import frc.robot.subsystems.PotentioSubsytem;
 import frc.robot.subsystems.SensorSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -21,10 +22,11 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
     MotorSubsystem motorSubsystem = new MotorSubsystem();
     SensorSubsystem sensorSubsystem = new SensorSubsystem();
+    PotentioSubsytem potentioSubsytem = new PotentioSubsytem();
     CommandXboxController controller = new CommandXboxController(0);
     
     Command motorCmd = new MotorCommand(motorSubsystem, () -> controller.getLeftY());
-    Command extendedMotorCmd = new ExtendedMotorCommand(motorSubsystem, sensorSubsystem, () -> controller.getLeftY());
+    Command extendedMotorCmd = new ExtendedMotorCommand(motorSubsystem, sensorSubsystem, potentioSubsytem, () -> controller.getLeftY());
 
     /*
      * 1 - MotorCommand
