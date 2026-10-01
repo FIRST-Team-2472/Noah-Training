@@ -23,4 +23,8 @@ public class MotorSubsystem extends SubsystemBase {
     public void motorSetSpeed(double speed) {
         motor.set(speed);
     }
+
+    public TalonFX getMotor() {
+        return motor;
+    }
 }
